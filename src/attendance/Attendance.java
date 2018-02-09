@@ -21,7 +21,7 @@ public class Attendance extends Application
     @Override
     public void start(Stage stage) throws Exception
     {
-        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("GUI/view/Login.fxml"));
         
         Scene scene = new Scene(root);
         
