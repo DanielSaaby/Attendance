@@ -20,8 +20,6 @@ import javafx.scene.control.Label;
 public class LoginController implements Initializable
 {
 
-    @FXML
-    private JFXButton LoginButton;
     
 
     
