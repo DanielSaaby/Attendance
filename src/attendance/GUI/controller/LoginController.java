@@ -5,6 +5,7 @@
  */
 package attendance.GUI.controller;
 
+import com.jfoenix.controls.JFXButton;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -18,6 +19,9 @@ import javafx.scene.control.Label;
  */
 public class LoginController implements Initializable
 {
+
+    @FXML
+    private JFXButton LoginButton;
     
 
     
