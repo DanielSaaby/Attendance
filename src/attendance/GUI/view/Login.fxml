@@ -29,9 +29,9 @@
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <ImageView fitHeight="47.0" fitWidth="200.0" layoutX="386.0" layoutY="339.0">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Desktop/easv.png" />
+            <Image url="@easv.png" />
          </image>
       </ImageView>
    </children>
