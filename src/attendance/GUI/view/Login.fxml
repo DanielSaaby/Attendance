@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -10,9 +11,9 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.GUI.controller.LoginController">
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.GUI.controller.LoginController">
    <children>
-      <JFXButton buttonType="RAISED" layoutX="259.0" layoutY="251.0" prefHeight="47.0" prefWidth="83.0" style="-fx-border-color: GREY; -fx-border-radius: 15; -fx-background-radius: 15;" text="Login">
+      <JFXButton buttonType="RAISED" layoutX="409.0" layoutY="392.0" onAction="#loginEvent" prefHeight="47.0" prefWidth="83.0" style="-fx-border-color: GREY; -fx-border-radius: 15; -fx-background-radius: 15;" text="Login">
          <ripplerFill>
             <RadialGradient centerX="0.5" centerY="0.4714286077590216" focusDistance="0.21705432270848468" radius="0.03875968068145042">
                <stops>
@@ -22,17 +23,18 @@
             </RadialGradient>
          </ripplerFill>
       </JFXButton>
-      <JFXTextField layoutX="233.0" layoutY="123.0" promptText="User ID" AnchorPane.topAnchor="123.0" />
-      <JFXTextField layoutX="233.0" layoutY="188.0" promptText="Password" />
-      <Label layoutX="228.0" layoutY="53.0" text="Attendance login" AnchorPane.topAnchor="53.0">
+      <JFXTextField fx:id="userLbl" layoutX="383.0" layoutY="253.0" promptText="User ID" AnchorPane.topAnchor="253.0" />
+      <Label layoutX="231.0" layoutY="87.0" text="Attendance login" textAlignment="CENTER" AnchorPane.topAnchor="87.0">
          <font>
-            <Font name="System Bold" size="18.0" />
+            <Font name="Arial Bold" size="54.0" />
          </font>
       </Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="538.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@easv.png" />
          </image>
       </ImageView>
+      <Label fx:id="loginErrorLbl" alignment="CENTER" layoutX="300.0" layoutY="201.0" prefHeight="17.0" prefWidth="300.0" text="User name or Password is incorrect please try again" textFill="#e11818" />
+      <JFXPasswordField fx:id="passwordLbl" layoutX="383.0" layoutY="313.0" promptText="Password" />
    </children>
 </AnchorPane>
