@@ -6,16 +6,23 @@
 package attendance.GUI.controller;
 
 import com.jfoenix.controls.JFXButton;
+import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 /**
@@ -79,6 +86,27 @@ public class StudentloginController implements Initializable
         fadeTransition.setFromValue(0);
         fadeTransition.setToValue(1);
         fadeTransition.play();        
+    }
+
+    @FXML
+    private void viewDetailsEvent(ActionEvent event) 
+    {
+        loadNextScene();
+    }
+    
+    public void loadNextScene()
+    {
+        try {
+            Parent nextView = (AnchorPane) FXMLLoader.load(getClass().getResource("/attendance/GUI/view/StudentAdvancedDetails.fxml"));
+            Scene newScene = new Scene(nextView);
+            Stage curStage = (Stage) rootPane.getScene().getWindow();
+            
+            curStage.setScene(newScene);
+        } catch (IOException ex) 
+        {
+            Logger.getLogger(StudentloginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+                
     }
     
 }

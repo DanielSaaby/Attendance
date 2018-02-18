@@ -5,8 +5,12 @@
         <group>
             <file>file:/C:/Users/Frederik%20Tubæk/Documents/GitHub/Attendance/src/attendance/GUI/view/Studentlogin.fxml</file>
             <file>file:/C:/Users/Frederik%20Tubæk/Documents/GitHub/Attendance/src/attendance/GUI/controller/LoginController.java</file>
+            <file>file:/C:/Users/Frederik%20Tubæk/Documents/GitHub/Attendance/src/attendance/GUI/view/StudentAdvancedDetails.fxml</file>
             <file>file:/C:/Users/Frederik%20Tubæk/Documents/GitHub/Attendance/src/attendance/Attendance.java</file>
+            <file>file:/C:/Users/Frederik%20Tubæk/Documents/GitHub/Attendance/src/attendance/GUI/view/TeacherLogin.fxml</file>
+            <file>file:/C:/Users/Frederik%20Tubæk/Documents/GitHub/Attendance/src/attendance/GUI/controller/TeacherLoginController.java</file>
             <file>file:/C:/Users/Frederik%20Tubæk/Documents/GitHub/Attendance/src/attendance/GUI/controller/StudentloginController.java</file>
+            <file>file:/C:/Users/Frederik%20Tubæk/Documents/GitHub/Attendance/src/attendance/GUI/controller/StudentAdvancedDetailsController.java</file>
         </group>
     </open-files>
 </project-private>

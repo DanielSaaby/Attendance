@@ -35,7 +35,7 @@
             </RadialGradient>
          </ripplerFill>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="390.0" layoutY="388.0" prefHeight="30.0" prefWidth="120.0" style="-fx-border-color: GREY; -fx-border-radius: 15; -fx-background-radius: 15;" text="Attendance details" AnchorPane.leftAnchor="390.0" AnchorPane.rightAnchor="390.0" AnchorPane.topAnchor="388.0">
+      <JFXButton buttonType="RAISED" layoutX="390.0" layoutY="388.0" onAction="#viewDetailsEvent" prefHeight="30.0" prefWidth="120.0" style="-fx-border-color: GREY; -fx-border-radius: 15; -fx-background-radius: 15;" text="Attendance details" AnchorPane.leftAnchor="390.0" AnchorPane.rightAnchor="390.0" AnchorPane.topAnchor="388.0">
          <ripplerFill>
             <RadialGradient centerX="0.5" centerY="0.4714286077590216" focusDistance="0.21705432270848468" radius="0.03875968068145042">
                <stops>
