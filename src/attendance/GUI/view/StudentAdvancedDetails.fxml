@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
-    
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="477.0" prefWidth="681.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="43.0" layoutY="37.0" text="Student Name:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="190.0" layoutY="37.0" text="Daniel Saaby Rasmussen">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <BarChart layoutX="386.0" layoutY="272.0" prefHeight="191.0" prefWidth="280.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <PieChart layoutX="14.0" layoutY="266.0" prefHeight="191.0" prefWidth="259.0" />
+      <JFXComboBox layoutX="103.0" layoutY="226.0" />
+      <JFXComboBox layoutX="498.0" layoutY="239.0" />
+   </children>
 </AnchorPane>
