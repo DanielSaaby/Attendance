@@ -20,12 +20,7 @@ import javafx.scene.image.ImageView;
  * @author Daniels PC
  */
 public class LoginController implements Initializable
-{
-
-
-    
-
-    
+{  
     
     @Override
     public void initialize(URL url, ResourceBundle rb)
