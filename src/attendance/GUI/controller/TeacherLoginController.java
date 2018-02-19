@@ -31,6 +31,7 @@ public class TeacherLoginController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) 
     {
         rootPane.setOpacity(0);
+        makeFadingTransmition();
         
     }    
     
