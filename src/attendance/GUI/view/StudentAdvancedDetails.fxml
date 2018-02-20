@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" />
+<AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.GUI.controller.StudentAdvancedDetailsController">
+   <children>
+      <Label layoutX="43.0" layoutY="37.0" text="Student Name:">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="190.0" layoutY="37.0" text="Daniel Saaby Rasmussen">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <BarChart fx:id="barChart" layoutX="491.0" layoutY="309.0" prefHeight="258.0" prefWidth="378.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <PieChart fx:id="pieChart" layoutX="27.0" layoutY="299.0" prefHeight="278.0" prefWidth="378.0" />
+      <JFXComboBox fx:id="absencePeriodComboBox" layoutX="131.0" layoutY="255.0" prefHeight="31.0" prefWidth="171.0" />
+      <JFXComboBox fx:id="classAbsenceComboBox" layoutX="589.0" layoutY="255.0" prefHeight="31.0" prefWidth="183.0" />
+   </children>
+</AnchorPane>

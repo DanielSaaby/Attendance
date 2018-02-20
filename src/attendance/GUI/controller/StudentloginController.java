@@ -81,7 +81,7 @@ public class StudentloginController implements Initializable
     private void makeFadingTransmition() 
     {
         FadeTransition fadeTransition = new FadeTransition();
-        fadeTransition.setDuration(Duration.millis(2500));
+        fadeTransition.setDuration(Duration.millis(1500));
         fadeTransition.setNode(rootPane);
         fadeTransition.setFromValue(0);
         fadeTransition.setToValue(1);
@@ -96,7 +96,8 @@ public class StudentloginController implements Initializable
     
     public void loadNextScene()
     {
-        try {
+        try 
+        {
             Parent nextView = (AnchorPane) FXMLLoader.load(getClass().getResource("/attendance/GUI/view/StudentAdvancedDetails.fxml"));
             Scene newScene = new Scene(nextView);
             Stage curStage = (Stage) rootPane.getScene().getWindow();
