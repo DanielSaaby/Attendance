@@ -51,6 +51,7 @@ public class LoginController implements Initializable
     public void initialize(URL url, ResourceBundle rb)
     {
         loginErrorLbl.setVisible(false);
+        rootPane.setId("pane");
     }    
 
     @FXML

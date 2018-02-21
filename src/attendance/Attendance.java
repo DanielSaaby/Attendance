@@ -24,9 +24,11 @@ public class Attendance extends Application
         Parent root = FXMLLoader.load(getClass().getResource("GUI/view/Login.fxml"));
         
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(getClass().getResource("Res/Design.css").toExternalForm());
         
         stage.setScene(scene);
         stage.show();
+        
     }
 
     /**
