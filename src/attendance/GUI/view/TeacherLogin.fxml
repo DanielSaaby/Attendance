@@ -11,16 +11,15 @@
 
 <AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.GUI.controller.TeacherLoginController">
    <children>
-      <TableView layoutX="50.0" layoutY="108.0" prefHeight="444.0" prefWidth="459.0">
+      <TableView fx:id="studentTableView" layoutX="50.0" layoutY="125.0" prefHeight="400.0" prefWidth="397.0">
         <columns>
-          <TableColumn prefWidth="328.0" text="Name" />
-          <TableColumn prefWidth="130.0" text="Absence" />
+          <TableColumn fx:id="studentNameColumn" prefWidth="275.0" text="Name" />
+          <TableColumn fx:id="studentAbsenceColumn" prefWidth="120.0" text="Absence %" />
         </columns>
       </TableView>
-      <JFXTextField layoutX="50.0" layoutY="76.0" prefHeight="25.0" prefWidth="329.0" promptText="Search" />
-      <JFXComboBox layoutX="50.0" layoutY="25.0" prefHeight="25.0" prefWidth="130.0" />
-      <JFXComboBox layoutX="199.0" layoutY="25.0" prefHeight="25.0" prefWidth="91.0" />
-      <JFXButton buttonType="RAISED" layoutX="650.0" layoutY="283.0" onAction="#viewAdvancedEvent" prefHeight="34.0" prefWidth="116.0" style="-fx-border-color: GREY; -fx-border-radius: 15; -fx-background-radius: 15;" text="Advanced">
+      <JFXTextField fx:id="searchBar" layoutX="50.0" layoutY="90.0" prefHeight="25.0" prefWidth="329.0" promptText="Search" />
+      <JFXComboBox fx:id="classComboBox" layoutX="50.0" layoutY="44.0" prefHeight="25.0" prefWidth="130.0" />
+      <JFXButton buttonType="RAISED" layoutX="115.0" layoutY="538.0" onAction="#viewDetailsEvent" prefHeight="34.0" prefWidth="116.0" style="-fx-border-color: GREY; -fx-border-radius: 15; -fx-background-radius: 15;" text="Details">
          <ripplerFill>
             <RadialGradient centerX="0.5" centerY="0.4714286077590216" focusDistance="0.21705432270848468" radius="0.03875968068145042">
                <stops>
@@ -30,7 +29,7 @@
             </RadialGradient>
          </ripplerFill>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="650.0" layoutY="330.0" onAction="#editEvent" prefHeight="34.0" prefWidth="116.0" style="-fx-border-color: GREY; -fx-border-radius: 15; -fx-background-radius: 15;" text="Edit">
+      <JFXButton buttonType="RAISED" layoutX="263.0" layoutY="538.0" onAction="#editEvent" prefHeight="34.0" prefWidth="116.0" style="-fx-border-color: GREY; -fx-border-radius: 15; -fx-background-radius: 15;" text="Edit">
          <ripplerFill>
             <RadialGradient centerX="0.5" centerY="0.4714286077590216" focusDistance="0.21705432270848468" radius="0.03875968068145042">
                <stops>

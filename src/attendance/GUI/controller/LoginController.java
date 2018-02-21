@@ -57,14 +57,14 @@ public class LoginController implements Initializable
     @FXML
     private void loginEvent(ActionEvent event) throws IOException 
     {
-        if(userLbl.getText().equalsIgnoreCase("StudentUser") && passwordLbl.getText().equalsIgnoreCase("testpassword1"))
+        if(userLbl.getText().equalsIgnoreCase("StudentUser") && passwordLbl.getText().equalsIgnoreCase("pass"))
         {
             loginErrorLbl.setVisible(false);
             nextView = (AnchorPane) FXMLLoader.load(getClass().getResource("/attendance/GUI/view/Studentlogin.fxml"));
             fadeOut();
             
         }
-        else if (userLbl.getText().equalsIgnoreCase("TeacherUser") && passwordLbl.getText().equalsIgnoreCase("testpassword2"))
+        else if (userLbl.getText().equalsIgnoreCase("TeacherUser") && passwordLbl.getText().equalsIgnoreCase("pass"))
         {
             loginErrorLbl.setVisible(false);
             nextView = (AnchorPane) FXMLLoader.load(getClass().getResource("/attendance/GUI/view/TeacherLogin.fxml"));

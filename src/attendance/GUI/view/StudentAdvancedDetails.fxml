@@ -11,25 +11,28 @@
 
 <AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.GUI.controller.StudentAdvancedDetailsController">
    <children>
-      <JFXComboBox fx:id="absencePeriodComboBox" layoutX="131.0" layoutY="255.0" prefHeight="31.0" prefWidth="171.0" />
+      <JFXComboBox fx:id="absencePeriodComboBox" layoutX="43.0" layoutY="122.0" prefHeight="31.0" prefWidth="171.0" />
       <Label layoutX="43.0" layoutY="37.0" text="Student Name:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="190.0" layoutY="37.0" text="Daniel Saaby Rasmussen">
+      <Label layoutX="169.0" layoutY="37.0" text="Daniel Saaby Rasmussen">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <StackedBarChart fx:id="barChart" layoutX="484.0" layoutY="299.0" prefHeight="278.0" prefWidth="349.0">
+      <StackedBarChart fx:id="barChart" horizontalGridLinesVisible="false" horizontalZeroLineVisible="false" layoutX="532.0" layoutY="205.0" prefHeight="323.0" prefWidth="343.0" verticalGridLinesVisible="false">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis fx:id="yAxis" side="LEFT" />
+          <NumberAxis fx:id="yAxis" side="LEFT">
+               <tickLabelFont>
+                  <Font size="1.0" />
+               </tickLabelFont></NumberAxis>
         </yAxis>
       </StackedBarChart>
-      <PieChart fx:id="pieChart" layoutX="27.0" layoutY="299.0" prefHeight="278.0" prefWidth="378.0" />
+      <PieChart fx:id="pieChart" layoutX="14.0" layoutY="169.0" prefHeight="400.0" prefWidth="525.0" />
    </children>
 </AnchorPane>

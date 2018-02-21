@@ -7,6 +7,7 @@ package attendance.GUI.controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -15,11 +16,13 @@ import javafx.collections.ObservableList;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.chart.XYChart.Series;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -38,7 +41,7 @@ public class StudentAdvancedDetailsController implements Initializable {
     @FXML
     private JFXComboBox<String> absencePeriodComboBox;
     @FXML
-    private JFXComboBox<String> classAbsenceComboBox; 
+    private NumberAxis yAxis;
     
     private int absence = 14;
     private int presence = 86;
@@ -48,8 +51,8 @@ public class StudentAdvancedDetailsController implements Initializable {
     private int absenceWednesday;
     private int absenceTuesday;
     private int absenceFriday;
-    @FXML
-    private NumberAxis yAxis;
+    
+    private ArrayList weekData = new ArrayList(); 
             
     
 
@@ -65,7 +68,13 @@ public class StudentAdvancedDetailsController implements Initializable {
         barChart.setVisible(false);
         barChart.setLegendVisible(false);
         
+        weekData.add(absenceMonday);
+        weekData.add(absenceThursday);
+        weekData.add(absenceWednesday);
+        weekData.add(absenceTuesday);
+        weekData.add(absenceFriday);
         
+     
  
     }  
     
@@ -177,10 +186,12 @@ public class StudentAdvancedDetailsController implements Initializable {
     private void initializeBarChart()
     {
         barChart.getData().clear();
- 
+        
+        
         XYChart.Series series1 = new XYChart.Series();
         series1.setName(absenceMonday + " %"); 
         series1.getData().add(new XYChart.Data("Monday", absenceMonday));
+        
         
         XYChart.Series series2 = new XYChart.Series();
         series2.setName(absenceThursday + " %"); 
@@ -200,11 +211,24 @@ public class StudentAdvancedDetailsController implements Initializable {
         
         barChart.getData().addAll(series1, series2, series3, series4, series5);
         
+        for(Node n:barChart.lookupAll(".default-color0.chart-bar")) 
+        {
+            n.setStyle("-fx-bar-fill: green;");
+        }
+        
+       
+                
+        
+    
+        
+
+        
         yAxis.setAutoRanging(false);
         yAxis.setLowerBound(0);
         yAxis.setUpperBound(0);
         yAxis.setTickUnit(0); 
-        yAxis.setVisible(false);
+        
+        
 
     }
 
