@@ -54,7 +54,6 @@ public class TeacherLoginController implements Initializable {
     private JFXComboBox<String> classComboBox;
     
     private Model model = new Model();
-    public static String selectedClass;
 
     /**
      * Initializes the controller class.
@@ -99,8 +98,16 @@ public class TeacherLoginController implements Initializable {
     {
         try 
         {
-            Parent nextView = (AnchorPane) FXMLLoader.load(getClass().getResource("/attendance/GUI/view/TeacherDetails.fxml"));
-            Scene newScene = new Scene(nextView);
+            
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/attendance/GUI/view/TeacherDetails.fxml"));        
+            
+            Parent nextView = (AnchorPane) fxmlLoader.load();
+            
+            TeacherDetailsController tdc = fxmlLoader.getController();
+            tdc.setModel(model);
+            tdc.setClass(classComboBox.getSelectionModel().getSelectedItem());
+            Scene newScene = new Scene(nextView);          
+            
             Stage curStage = (Stage) rootPane.getScene().getWindow();
   
             curStage.setScene(newScene);
@@ -120,7 +127,6 @@ public class TeacherLoginController implements Initializable {
             "CS2016A",
             "CS2016B");
         classComboBox.getSelectionModel().select("All Students");
-        selectedClass = "All Students";
         classComboBox.valueProperty().addListener(new ChangeListener<String>() 
         {
             @Override
@@ -129,27 +135,22 @@ public class TeacherLoginController implements Initializable {
                 if(newValue.equalsIgnoreCase("CS2017A"))
                 {
                     model.getCS2017A();
-                    selectedClass = "CS2017A";
                 }
                 if(newValue.equalsIgnoreCase("CS2017B"))
                 {
                     model.getCS2017B();
-                    selectedClass = "CS2017B";
                 }
                 if(newValue.equalsIgnoreCase("CS2016A"))
                 {
                     model.getCS2016A();
-                    selectedClass = "CS2016A";
                 }
                 if(newValue.equalsIgnoreCase("CS2016B"))
                 {
                     model.getCS2016B();
-                    selectedClass = "CS2016B";
                 }
                 if(newValue.equalsIgnoreCase("All Students"))
                 {
                     model.getAllStudents();
-                    selectedClass = "All Students";
                 }
             }
         });

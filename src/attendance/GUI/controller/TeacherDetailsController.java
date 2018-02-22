@@ -10,8 +10,13 @@ import attendance.GUI.model.Model;
 import com.jfoenix.controls.JFXListView;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.chart.BarChart;
+import javafx.scene.chart.PieChart;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -24,7 +29,7 @@ import javafx.scene.layout.AnchorPane;
  */
 public class TeacherDetailsController implements Initializable {
     
-    private Model model = new Model();
+    private Model model;
 
     @FXML
     private AnchorPane rootPane;
@@ -32,6 +37,12 @@ public class TeacherDetailsController implements Initializable {
     private TableView<Student> studentTableView;
     @FXML
     private TableColumn<Student, String> studentColumn;
+    @FXML
+    private Label classLbl;
+    @FXML
+    private BarChart<?, ?> barChart;
+    @FXML
+    private PieChart pieChart;
 
 
     /**
@@ -40,9 +51,37 @@ public class TeacherDetailsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) 
     {
-        studentTableView.getItems().addAll(model.getListOfStudents());
         studentColumn.setCellValueFactory(new PropertyValueFactory("name"));
+        initializeTableView();
+        
     }    
+
+    void setModel(Model model) 
+    {
+       this.model = model;        
+       studentTableView.getItems().addAll(model.getListOfStudents());
+            
+    }
+
+    void setClass(String selectedItem) 
+    {
+        classLbl.setText(selectedItem);
+    }
+
+    private void initializeTableView() 
+    {
+       studentTableView.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Student>() 
+       {
+           @Override
+           public void changed(ObservableValue<? extends Student> observable, Student oldValue, Student newValue) 
+           {
+               
+           }
+       });
+               
+       
+ 
+    }
 
   
 
