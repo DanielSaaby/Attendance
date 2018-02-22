@@ -70,6 +70,8 @@ public class TeacherLoginController implements Initializable {
         
         initializeClassComboBox();
         eventSearchSong();
+        
+        studentTableView.setSelectionModel(null);
     }    
     
        private void makeFadingTransmition() 
@@ -86,15 +88,30 @@ public class TeacherLoginController implements Initializable {
     @FXML
     private void editEvent(ActionEvent event) 
     {
+        try 
+        {
+            
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/attendance/GUI/view/TeacherEdit.fxml"));        
+            
+            Parent nextView = (AnchorPane) fxmlLoader.load();
+            
+            TeacherEditController tec = fxmlLoader.getController();
+            tec.setModel(model);
+            tec.setClass(classComboBox.getSelectionModel().getSelectedItem());
+           
+            Scene newScene = new Scene(nextView);          
+            
+            Stage curStage = (Stage) rootPane.getScene().getWindow();
+  
+            curStage.setScene(newScene);
+        } catch (IOException ex) 
+        {
+            Logger.getLogger(StudentloginController.class.getName()).log(Level.SEVERE, null, ex);
+        }        
     }
 
     @FXML
     private void viewDetailsEvent(ActionEvent event) 
-    {
-        loadNextScene();
-    }
-    
-    public void loadNextScene()
     {
         try 
         {
@@ -106,6 +123,7 @@ public class TeacherLoginController implements Initializable {
             TeacherDetailsController tdc = fxmlLoader.getController();
             tdc.setModel(model);
             tdc.setClass(classComboBox.getSelectionModel().getSelectedItem());
+           
             Scene newScene = new Scene(nextView);          
             
             Stage curStage = (Stage) rootPane.getScene().getWindow();
@@ -115,8 +133,9 @@ public class TeacherLoginController implements Initializable {
         {
             Logger.getLogger(StudentloginController.class.getName()).log(Level.SEVERE, null, ex);
         }
-                
+
     }
+
 
     private void initializeClassComboBox() 
     {
@@ -180,6 +199,22 @@ public class TeacherLoginController implements Initializable {
             sort.comparatorProperty().bind(studentTableView.comparatorProperty());
             studentTableView.setItems(sort);
         });
+    }
+
+    @FXML
+    private void logOutEvent(ActionEvent event) {
+        try 
+        {
+            Parent nextView = (AnchorPane) FXMLLoader.load(getClass().getResource("/attendance/GUI/view/Login.fxml"));
+            Scene newScene = new Scene(nextView);
+            Stage curStage = (Stage) rootPane.getScene().getWindow();
+            
+            curStage.setScene(newScene);
+        } catch (IOException ex) 
+        {
+            Logger.getLogger(StudentloginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+            
     }
 
     

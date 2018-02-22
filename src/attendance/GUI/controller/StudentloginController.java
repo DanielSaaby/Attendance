@@ -109,5 +109,20 @@ public class StudentloginController implements Initializable
         }
                 
     }
+
+    @FXML
+    private void logOutEvent(ActionEvent event) {
+        try 
+        {
+            Parent nextView = (AnchorPane) FXMLLoader.load(getClass().getResource("/attendance/GUI/view/Login.fxml"));
+            Scene newScene = new Scene(nextView);
+            Stage curStage = (Stage) rootPane.getScene().getWindow();
+            
+            curStage.setScene(newScene);
+        } catch (IOException ex) 
+        {
+            Logger.getLogger(StudentloginController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
 }
