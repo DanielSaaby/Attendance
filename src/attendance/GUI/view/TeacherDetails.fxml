@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.chart.BarChart?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.chart.CategoryAxis?>
 <?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.chart.StackedBarChart?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane id="AnchorPane" fx:id="rootPane" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="attendance.GUI.controller.TeacherDetailsController">
@@ -22,14 +25,29 @@
             <Font size="28.0" />
          </font>
       </Label>
-      <BarChart fx:id="barChart" layoutX="473.0" layoutY="300.0" prefHeight="280.0" prefWidth="387.0">
+      <StackedBarChart fx:id="barChart" layoutX="465.0" layoutY="309.0" prefHeight="264.0" prefWidth="408.0">
         <xAxis>
           <CategoryAxis side="BOTTOM" />
         </xAxis>
         <yAxis>
-          <NumberAxis animated="false" autoRanging="false" minorTickCount="0" side="LEFT" tickLabelGap="0.0" tickLabelsVisible="false" upperBound="0.0" />
+          <NumberAxis autoRanging="false" side="LEFT" />
         </yAxis>
-      </BarChart>
-      <PieChart fx:id="pieChart" layoutX="488.0" layoutY="14.0" prefHeight="325.0" prefWidth="372.0" />
+      </StackedBarChart>
+      <PieChart fx:id="pieChart" layoutX="465.0" layoutY="14.0" prefHeight="382.0" prefWidth="427.0" />
+      <JFXButton buttonType="RAISED" layoutX="263.0" layoutY="80.0" onAction="#overallEvent" prefHeight="30.0" prefWidth="170.0" style="-fx-border-color: GREY; -fx-border-radius: 15; -fx-background-radius: 15;" text="View overall Attendance">
+         <ripplerFill>
+            <RadialGradient centerX="0.5" centerY="0.4714286077590216" focusDistance="0.21705432270848468" radius="0.03875968068145042">
+               <stops>
+                  <Stop color="#2181c5" />
+                  <Stop color="#6278db" offset="1.0" />
+               </stops>
+            </RadialGradient>
+         </ripplerFill>
+      </JFXButton>
+      <JFXButton layoutX="-13.0" layoutY="-3.0" onAction="#goBackEvent" prefHeight="69.0" prefWidth="76.0" text="🠈">
+         <font>
+            <Font size="32.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

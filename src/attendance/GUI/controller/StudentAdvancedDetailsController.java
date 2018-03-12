@@ -6,17 +6,24 @@
 package attendance.GUI.controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.event.EventType;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
@@ -24,6 +31,7 @@ import javafx.scene.chart.StackedBarChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -230,6 +238,21 @@ public class StudentAdvancedDetailsController implements Initializable {
         
         
 
+    }
+
+    @FXML
+    private void goBackEvent(ActionEvent event) {
+        try 
+        {
+            Parent nextView = (AnchorPane) FXMLLoader.load(getClass().getResource("/attendance/GUI/view/Studentlogin.fxml"));
+            Scene newScene = new Scene(nextView);
+            Stage curStage = (Stage) rootPane.getScene().getWindow();
+            
+            curStage.setScene(newScene);
+        } catch (IOException ex) 
+        {
+            Logger.getLogger(StudentloginController.class.getName()).log(Level.SEVERE, null, ex);
+        }        
     }
 
    
